@@ -1,0 +1,19 @@
+﻿@model MatrixModel
+
+@{
+    ViewData["Title"] = "Matrix Result";
+}
+
+<h2>Matrix Result</h2>
+
+<h3>Result</h3>
+@for (int i = 0; i < Model.Size; i++)
+{
+    <div class="form-group">
+        @for (int j = 0; j < Model.Size; j++)
+        {
+            @Html.TextBoxFor(m => m.Result[i][j], new { @class = "form-control", style = "width: 50px; display: inline;", @readonly = "readonly" })
+        }
+    </div>
+}
+
